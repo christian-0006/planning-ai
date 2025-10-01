@@ -5,11 +5,14 @@ use App\Controllers\HomeController;
 use App\Middleware\LoggerMiddleware;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\SessionMiddleware;
+use App\Controllers\LangController;
+use App\Middleware\TranslatorMiddleware;
 
 $router = new Router();
 
 // On ajoute le middleware globalement
 $router->addMiddleware(new SessionMiddleware()); // Toujours en premier
+$router->addMiddleware(new TranslatorMiddleware()); //ajoute la langue
 $router->addMiddleware(new LoggerMiddleware());  // Ensuite le logger
 
 // Page de login
@@ -23,6 +26,12 @@ $router->get('/home', function($request) {
     return $auth->handle($request, function($req) {
         return (new HomeController())->index();
     });
+});
+
+// Route langues
+$router->get('/lang', function($request) {
+    $controller = new LangController();
+    return $controller->switch($request);
 });
 
 //logout

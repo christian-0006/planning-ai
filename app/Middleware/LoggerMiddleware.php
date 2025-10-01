@@ -72,8 +72,10 @@ class LoggerMiddleware {
 
             // On affiche une page d'erreur générique à l'utilisateur
             http_response_code(500);
-            echo "<h1>Erreur interne du serveur</h1>";
-            echo "<p>Une erreur est survenue. Veuillez réessayer plus tard.</p>";
+            $title_key   = 'error_500_title';
+            $message_key = 'error_500_message';
+            require __DIR__ . '/../Views/error.php';
+            exit;
 
             // On arrête l'exécution
             exit;
