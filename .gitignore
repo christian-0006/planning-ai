@@ -1,0 +1,21 @@
+# Dépendances installées par Composer
+/vendor/
+
+# Fichiers d'environnement (jamais pousser sur GitHub)
+.env
+
+# Logs et fichiers temporaires
+/storage/logs/
+*.log
+
+# Cache
+/cache/
+*.cache
+
+# Fichiers système (Windows / macOS)
+.DS_Store
+Thumbs.db
+
+# IDE (Visual Studio Code, PhpStorm…)
+.vscode/
+.idea/
