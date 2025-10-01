@@ -5,6 +5,7 @@ use App\Controllers\HomeController;
 use App\Middleware\LoggerMiddleware;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\SessionMiddleware;
+use App\Controllers\LangController;
 
 $router = new Router();
 
@@ -23,6 +24,12 @@ $router->get('/home', function($request) {
     return $auth->handle($request, function($req) {
         return (new HomeController())->index();
     });
+});
+
+// Route langues
+$router->get('/lang', function($request) {
+    $controller = new LangController();
+    return $controller->switch($request);
 });
 
 //logout

@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use App\Services\Translator;
+
 class HomeController {
     public function index() {
 
@@ -12,6 +14,11 @@ class HomeController {
 
         $email = $_SESSION['email'];
 
+        $translator = new Translator($_SESSION['lang'] ?? 'fr');
+
+        $welcome = $translator->trans('welcome');
+        $logout  = $translator->trans('logout');
+        
         require __DIR__ . '/../Views/home.php';
     }
 }

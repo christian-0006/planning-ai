@@ -5,11 +5,11 @@
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Bonjour 👋</h1>
+    <h1><?= htmlspecialchars($welcome) ?> 👋</h1>
     <p>J’ai bien reçu votre email : <strong><?= htmlspecialchars($email) ?></strong></p>
     <!-- Bouton de déconnexion -->
     <form action="/logout" method="get">
-        <button type="submit">Se déconnecter</button>
+        <button type="submit"><?= htmlspecialchars($logout) ?></button>
     </form>
 </body>
 </html>
