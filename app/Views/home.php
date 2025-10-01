@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil</title>
+    <title><?= et('welcome') ?></title>
 </head>
 <body>
-    <h1><?= htmlspecialchars($welcome) ?> 👋</h1>
-    <p>J’ai bien reçu votre email : <strong><?= htmlspecialchars($email) ?></strong></p>
+    <h1><?= et('welcome') ?> 👋</h1>
+    <p>J’ai bien reçu votre email : <strong><?= et('email') ?></strong></p>
     <!-- Bouton de déconnexion -->
     <form action="/logout" method="get">
-        <button type="submit"><?= htmlspecialchars($logout) ?></button>
+        <button type="submit"><?= et('logout') ?></button>
     </form>
 </body>
 </html>

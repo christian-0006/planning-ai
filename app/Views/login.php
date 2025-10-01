@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="<?= htmlspecialchars($lang ?? 'fr') ?>">
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($translator->trans('login')) ?></title>
+    <title><?= et('login') ?></title>
 </head>
 <body>
-    <h1><?= htmlspecialchars($translator->trans('welcome')) ?></h1>
+    <h1><?= et('welcome') ?></h1>
     <form method="POST" action="/login">
-        <label><?= htmlspecialchars($translator->trans('email')) ?> :</label>
+        <label><?= et('email') ?> :</label>
         <input type="email" name="email" required>
-        <button type="submit"><?= htmlspecialchars($translator->trans('login')) ?></button>
+        <button type="submit"><?= et('login') ?></button>
     </form>
 
     <!-- Sélecteur de langue -->
     <p>
-        <a href="/lang?lang=fr">🇫🇷 Français</a> | 
-        <a href="/lang?lang=en">🇬🇧 English</a>
+        <a href="/lang?lang=fr">🇫🇷 <?= et('language_fr') ?></a> | 
+        <a href="/lang?lang=en">🇬🇧 <?= et('language_en') ?></a>
     </p>
 </body>
 </html>

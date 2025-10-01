@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Charger les helpers globaux
+require __DIR__ . '/../app/Support/helpers.php';
+
 use Dotenv\Dotenv;
 
 // Chargement des variables d'environnement

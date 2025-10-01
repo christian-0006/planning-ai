@@ -31,7 +31,10 @@ class Router {
 
         if (!$callback) {
             http_response_code(404);
-            echo "404 - Page non trouvée";
+            $title_key   = 'error_404_title';
+            $message_key = 'error_404_message';
+            require __DIR__ . '/Views/error.php';
+            //exit;
             return;
         }
 

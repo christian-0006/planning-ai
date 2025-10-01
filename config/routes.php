@@ -6,11 +6,13 @@ use App\Middleware\LoggerMiddleware;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\SessionMiddleware;
 use App\Controllers\LangController;
+use App\Middleware\TranslatorMiddleware;
 
 $router = new Router();
 
 // On ajoute le middleware globalement
 $router->addMiddleware(new SessionMiddleware()); // Toujours en premier
+$router->addMiddleware(new TranslatorMiddleware()); //ajoute la langue
 $router->addMiddleware(new LoggerMiddleware());  // Ensuite le logger
 
 // Page de login
